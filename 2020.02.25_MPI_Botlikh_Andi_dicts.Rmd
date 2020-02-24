@@ -103,4 +103,15 @@ leafsync::latticeView(m1, m2)
 * All villages except Botlikh are monoethnic
 * Created with lingtypology package [@moroz2017]
 
+
+# 
+
+| Botlikh < Andic group < EC                                                                                                                | Andi < Andic group < EC                                                                                         |
+|-------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
+| Unwritten (can be written with extended Cyrillic script for Avar)                                                                         | Unwritten (can be written with extended Cyrillic script for Avar)                                               |
+| ~5,000–8,000 speakers                                                                                                                     | ~16,500 speakers                                                                                                |
+| Mostly spoken in 3 villages in northwestern Daghestan (Russian Federation): Botlikh, Miarso, Ashino, (Ankho); minor dialectal differences | About 14 villages; There are two main dialect groups: Lower Andi (Muni, Kvankhidatli) and Upper Andi (the rest) |
+| One full reference grammar in Georgian [@gudava1962]                                                                                      | Several reference grammars [@suleymanov57] (Rikvani), [@salimov10] (Gagatli), [@tsertsvadze65] (Andi)           |
+| Two dictionaries: [@saidovaabusov2012], [@alekseev2019]                                                                                   | No dictionary except [@kibrik1988]                                                                              |
+
 # Ссылки {.allowframebreaks}
