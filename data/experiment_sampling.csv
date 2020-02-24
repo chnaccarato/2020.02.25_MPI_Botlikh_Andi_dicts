@@ -1,0 +1,145 @@
+type_range,f_id,translation_en,n_types,n,percentage
+actual maximum,1,big butterfly,1,41774,41.774
+actual maximum,1,big butterfly,2,58226,58.226
+actual maximum,2,big butterflies,1,75727,75.727
+actual maximum,2,big butterflies,2,24273,24.273
+actual maximum,3,big grasshopper,1,100000,100
+actual maximum,4,big grasshoppers,1,100000,100
+actual maximum,5,the parents left,1,15256,15.256
+actual maximum,5,the parents left,2,84744,84.744
+actual maximum,6,pour your father some water,1,24950,24.95
+actual maximum,6,pour your father some water,2,66606,66.606
+actual maximum,6,pour your father some water,3,8444,8.444
+actual maximum,7,pour your cow some water,1,87186,87.18599999999999
+actual maximum,7,pour your cow some water,2,12814,12.814
+actual maximum,8,third girl,1,100000,100
+actual maximum,9,the bride was beautiful at the wedding,1,75632,75.632
+actual maximum,9,the bride was beautiful at the wedding,2,24368,24.368000000000002
+actual maximum,10,heels,1,65588,65.58800000000001
+actual maximum,10,heels,2,34412,34.412
+actual maximum,11,sons-in-law,1,87117,87.117
+actual maximum,11,sons-in-law,2,12883,12.883
+actual maximum,12,they are eating,1,15206,15.206
+actual maximum,12,they are eating,2,66966,66.96600000000001
+actual maximum,12,they are eating,3,17828,17.828
+actual maximum,13,"when he comes, we will eat",1,1125,1.125
+actual maximum,13,"when he comes, we will eat",2,28967,28.967
+actual maximum,13,"when he comes, we will eat",3,63005,63.005
+actual maximum,13,"when he comes, we will eat",4,6903,6.903
+actual maximum,14,rainbow,1,1105,1.105
+actual maximum,14,rainbow,2,28284,28.284
+actual maximum,14,rainbow,3,63712,63.712
+actual maximum,14,rainbow,4,6899,6.898999999999999
+actual maximum,15,north,1,35536,35.536
+actual maximum,15,north,2,64464,64.464
+actual maximum,16,thousand,1,1483,1.4829999999999999
+actual maximum,16,thousand,2,46104,46.104
+actual maximum,16,thousand,3,52413,52.413
+actual minimum,1,big butterfly,1,52411,52.410999999999994
+actual minimum,1,big butterfly,2,47589,47.589
+actual minimum,2,big butterflies,1,81356,81.356
+actual minimum,2,big butterflies,2,18644,18.644
+actual minimum,3,big grasshopper,1,100000,100
+actual minimum,4,big grasshoppers,1,100000,100
+actual minimum,5,the parents left,1,25688,25.688
+actual minimum,5,the parents left,2,74312,74.312
+actual minimum,6,pour your father some water,1,36117,36.117
+actual minimum,6,pour your father some water,2,58771,58.770999999999994
+actual minimum,6,pour your father some water,3,5112,5.112
+actual minimum,7,pour your cow some water,1,90217,90.217
+actual minimum,7,pour your cow some water,2,9783,9.783
+actual minimum,8,third girl,1,100000,100
+actual minimum,9,the bride was beautiful at the wedding,1,81343,81.343
+actual minimum,9,the bride was beautiful at the wedding,2,18657,18.657
+actual minimum,10,heels,1,73187,73.187
+actual minimum,10,heels,2,26813,26.813
+actual minimum,11,sons-in-law,1,90253,90.253
+actual minimum,11,sons-in-law,2,9747,9.747
+actual minimum,12,they are eating,1,25787,25.787
+actual minimum,12,they are eating,2,63282,63.282000000000004
+actual minimum,12,they are eating,3,10931,10.931000000000001
+actual minimum,13,"when he comes, we will eat",1,4576,4.5760000000000005
+actual minimum,13,"when he comes, we will eat",2,46354,46.354
+actual minimum,13,"when he comes, we will eat",3,46185,46.184999999999995
+actual minimum,13,"when he comes, we will eat",4,2885,2.8850000000000002
+actual minimum,14,rainbow,1,4524,4.524
+actual minimum,14,rainbow,2,45388,45.388
+actual minimum,14,rainbow,3,47203,47.203
+actual minimum,14,rainbow,4,2885,2.8850000000000002
+actual minimum,15,north,1,47103,47.103
+actual minimum,15,north,2,52897,52.897000000000006
+actual minimum,16,thousand,1,5934,5.933999999999999
+actual minimum,16,thousand,2,58572,58.572
+actual minimum,16,thousand,3,35494,35.494
+preference maximum,1,big butterfly,1,39257,39.257
+preference maximum,1,big butterfly,2,60743,60.743
+preference maximum,2,big butterflies,1,74450,74.45
+preference maximum,2,big butterflies,2,25550,25.55
+preference maximum,3,big grasshopper,1,100000,100
+preference maximum,4,big grasshoppers,1,100000,100
+preference maximum,5,the parents left,1,13620,13.62
+preference maximum,5,the parents left,2,86380,86.38
+preference maximum,6,pour your father some water,1,22653,22.653000000000002
+preference maximum,6,pour your father some water,2,68065,68.065
+preference maximum,6,pour your father some water,3,9282,9.282
+preference maximum,7,pour your cow some water,1,86300,86.3
+preference maximum,7,pour your cow some water,2,13700,13.700000000000001
+preference maximum,8,third girl,1,100000,100
+preference maximum,9,the bride was beautiful at the wedding,1,74292,74.292
+preference maximum,9,the bride was beautiful at the wedding,2,25708,25.708
+preference maximum,10,heels,1,63952,63.952
+preference maximum,10,heels,2,36048,36.048
+preference maximum,11,sons-in-law,1,86299,86.299
+preference maximum,11,sons-in-law,2,13701,13.700999999999999
+preference maximum,12,they are eating,1,13273,13.272999999999998
+preference maximum,12,they are eating,2,67339,67.339
+preference maximum,12,they are eating,3,19388,19.387999999999998
+preference maximum,13,"when he comes, we will eat",1,805,0.8049999999999999
+preference maximum,13,"when he comes, we will eat",2,25824,25.824
+preference maximum,13,"when he comes, we will eat",3,65342,65.342
+preference maximum,13,"when he comes, we will eat",4,8029,8.029
+preference maximum,14,rainbow,1,773,0.773
+preference maximum,14,rainbow,2,24861,24.861
+preference maximum,14,rainbow,3,66130,66.13
+preference maximum,14,rainbow,4,8236,8.236
+preference maximum,15,north,1,33021,33.021
+preference maximum,15,north,2,66979,66.979
+preference maximum,16,thousand,1,1083,1.083
+preference maximum,16,thousand,2,43100,43.1
+preference maximum,16,thousand,3,55817,55.81700000000001
+preference minimum,1,big butterfly,1,44815,44.815
+preference minimum,1,big butterfly,2,55185,55.184999999999995
+preference minimum,2,big butterflies,1,77261,77.261
+preference minimum,2,big butterflies,2,22739,22.739
+preference minimum,3,big grasshopper,1,100000,100
+preference minimum,4,big grasshoppers,1,100000,100
+preference minimum,5,the parents left,1,17993,17.993000000000002
+preference minimum,5,the parents left,2,82007,82.00699999999999
+preference minimum,6,pour your father some water,1,27756,27.755999999999997
+preference minimum,6,pour your father some water,2,64777,64.777
+preference minimum,6,pour your father some water,3,7467,7.467
+preference minimum,7,pour your cow some water,1,88077,88.077
+preference minimum,7,pour your cow some water,2,11923,11.923
+preference minimum,8,third girl,1,100000,100
+preference minimum,9,the bride was beautiful at the wedding,1,77526,77.526
+preference minimum,9,the bride was beautiful at the wedding,2,22474,22.474
+preference minimum,10,heels,1,67732,67.732
+preference minimum,10,heels,2,32268,32.268
+preference minimum,11,sons-in-law,1,87892,87.89200000000001
+preference minimum,11,sons-in-law,2,12108,12.107999999999999
+preference minimum,12,they are eating,1,17926,17.926000000000002
+preference minimum,12,they are eating,2,66267,66.267
+preference minimum,12,they are eating,3,15807,15.806999999999999
+preference minimum,13,"when he comes, we will eat",1,1798,1.798
+preference minimum,13,"when he comes, we will eat",2,33797,33.797
+preference minimum,13,"when he comes, we will eat",3,58850,58.85
+preference minimum,13,"when he comes, we will eat",4,5555,5.555000000000001
+preference minimum,14,rainbow,1,1747,1.7469999999999999
+preference minimum,14,rainbow,2,33263,33.263
+preference minimum,14,rainbow,3,59250,59.25
+preference minimum,14,rainbow,4,5740,5.74
+preference minimum,15,north,1,38780,38.78
+preference minimum,15,north,2,61220,61.22
+preference minimum,16,thousand,1,2537,2.537
+preference minimum,16,thousand,2,49451,49.451
+preference minimum,16,thousand,3,48012,48.012
