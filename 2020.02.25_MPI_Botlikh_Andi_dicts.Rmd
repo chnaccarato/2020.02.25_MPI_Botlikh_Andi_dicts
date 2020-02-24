@@ -4,7 +4,8 @@ author: "G. Moroz"
 institute: "Linguistic Convergence Laboratory, NRU HSE, Moscow, Russia"
 date: |
     | 25 February 2020, MPI-SHH, Jena
-    |
+    | 
+    | Presentation is available here: \alert{tinyurl.com/rvpqdaa}
     |
     | ![](images/01_qrcode.png)'
 output: 
@@ -25,18 +26,81 @@ editor_options:
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, dev='cairo_pdf', comment=NA)
 library(qrcode)
 png(filename="images/01_qrcode.png", width = 200, height = 200)
-qrcode_gen("https://github.com/agricolamz/2020.01.25_SPb_Rmarkdown/raw/master/2020.01.25_SPb_Rmarkdown.pdf")
+qrcode_gen("https://github.com/agricolamz/2020.02.25_MPI_Botlikh_Andi_dicts/raw/master/2020.02.25_MPI_Botlikh_Andi_dicts.pdf")
 dev.off()
 ```
 
 # Phonological description: data-driven analysis
 
+|   | Traditional analysis              | Data-driven analysis                                         |
+|---|-----------------------------------|--------------------------------------------------------------|
+| 1. | Done by trained linguist          | Evaluated by trained linguist                                |
+| 2. | Can be done from scratch          | Previous description needed (or at least prior expectations) |
+| 3. | Doesn’t care about amount of data | Care more about amount of data                               |
+| 4. | Less reproducible                 | More reproducible                                            |
+| 5. | Can not be automated              | Can be automated                                             |
+\pause
+
 Data-driven approach to phonological description and syllable structure analysis:
 
 * was proposed in [@moroz2018]
 * was applied to syllable structure  in [@moroz2019] to Adyghe data
-* was applied to syllable structure in [@romanova2019] to Russian and Macedonian data \pause
+* was applied to syllable structure in [@romanova2019] to Russian and Macedonian data
 
-I will present an application of this method to Botlikh and Zilo Andi data
+# Phonological description: data-driven analysis
+
+The main steps:
+
+* start with some language corpus (corpus, dictionary etc.)
+* automatically extract phonological units (segments, features, syllable structure etc.) \pause
+
+Further steps:
+
+* obtained frequencies and inventories could be compared with the same units from other languages \pause
+
+Advantages:
+
+* more reproducible
+* could be updated with new data, see ([Moroz 2019](https://github.com/agricolamz/2019.08.21-25_SLE_Leipzig/raw/master/2019.08.21-25_SLE_Leipzig.pdf))  slides from SLE on Bayesian typological research
+* answers the question *'How often is X present in language(s)?'* rather than *'Is X present in language(s)?'*
+
+# Andi and Botlikh villages
+
+```{r,eval=FALSE}
+library(tidyverse)
+map <- read_csv("data/andi_botlikh_villages.csv")
+map$eng[3] <- " "
+map$eng[c(1, 2, 4, 7, 9, 10, 14, 16, 17)] <- paste(".      ", map$eng[c(1, 2, 4, 7, 9, 10, 14, 16, 17)])
+
+library(lingtypology)
+map.feature(map$language,
+            features = map$language,
+            latitude = map$lat,
+            longitude = map$lon,
+            label = map$eng,
+            label.hide = FALSE,
+            width = log(map$population)*1.5,
+            tile = "Stamen.TerrainBackground",
+            zoom.level = 11) ->
+  m1
+
+map.feature(map$language,
+            latitude = map$lat,
+            longitude = map$lon,
+            label = map$eng,
+            width = log(map$population)*2,
+            tile = "Esri.WorldStreetMap",
+            minimap = TRUE, 
+            zoom.level = 5) ->
+  m2
+
+leafsync::latticeView(m1, m2)
+```
+
+![](images/02_map.png)
+
+* Size of the dot corresponds with number of villages' inhabitants
+* All villages except Botlikh are monoethnic
+* Created with lingtypology package [@moroz2017]
 
 # Ссылки {.allowframebreaks}
