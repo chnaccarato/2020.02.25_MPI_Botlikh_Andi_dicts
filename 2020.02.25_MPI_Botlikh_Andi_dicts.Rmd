@@ -24,10 +24,18 @@ editor_options:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE, dev='cairo_pdf', comment=NA)
+# setwd("/home/agricolamz/work/materials/2020.02.25_MPI_Botlikh_Andi_dicts/new/")
+library(tidyverse)
+library(extrafont)
+loadfonts()
+theme_set(theme_bw()+
+            theme(text = element_text(size = 19, family = "Brill")))
 library(qrcode)
 png(filename="images/01_qrcode.png", width = 200, height = 200)
 qrcode_gen("https://github.com/agricolamz/2020.02.25_MPI_Botlikh_Andi_dicts/raw/master/2020.02.25_MPI_Botlikh_Andi_dicts.pdf")
 dev.off()
+
+stress <- "́"
 ```
 
 # Phonological description: data-driven analysis
@@ -66,7 +74,7 @@ Advantages:
 
 # Andi and Botlikh villages
 
-```{r,eval=FALSE}
+```{r, eval=FALSE}
 library(tidyverse)
 map <- read_csv("data/andi_botlikh_villages.csv")
 map$eng[3] <- " "
@@ -114,4 +122,103 @@ leafsync::latticeView(m1, m2)
 | One full reference grammar in Georgian [@gudava1962]                                                                                      | Several reference grammars [@suleymanov57] (Rikvani), [@salimov10] (Gagatli), [@tsertsvadze65] (Andi)           |
 | Two dictionaries: [@saidovaabusov2012], [@alekseev2019]                                                                                   | No dictionary except [@kibrik1988]                                                                              |
 
-# Ссылки {.allowframebreaks}
+# Comparing two Botlikh dictionaries
+
+## [@saidovaabusov2012]
+
+* Compiled in the 2000s by a native speaker (M. G. Abusov) and an experienced linguist (P. A. Saidova)
+* Mostly Botlikh with some notes on Miarso \pause
+
+## [@alekseev2019]
+
+* Compiled in the 1960s / 1970s by a native speaker / philologist (X. G.
+Azaev) and later (in the 2000s) systematized by an experienced
+linguist (M. E. Alekseev)
+* Subsequently edited by T. A. Maisak and scheduled for posthumous
+publication last year
+* Botlikh only \pause
+
+## Summary:
+
+* Dictionaries were compiled independently of each other
+* with no metadata on the speakers consulted
+* data collection was separated with several decades break
+
+# Comparing two Botlikh dictionaries: data preparation
+
+* Automatically merge two `.doc` file into one unified `.xls` file
+* Manually check for similarities (S. Verhees, C. Naccarato and me)
+
+# Comparing two Botlikh dictionaries: data preparation
+
+```{r}
+library(ggforce)
+botlikh <- read_csv("data/botlikh.csv")
+
+botlikh %>% 
+  count(bind_id) %>% 
+  na.omit() %>% 
+  count() %>% 
+  summarise(n = n - 77,
+            sa = 8464 - n,
+            aa = 6821 - n) %>% 
+  pivot_longer(names_to = "type", values_to = "number", n:aa) %>% 
+  mutate(prop = round(number/sum(number), 3),
+         label = paste0(number, " lexemes\n", prop*100, "%"),
+         x = c(-0.04, 0.25, -0.3), 
+         r = 0,
+         y  = 0) ->
+  values
+
+data.frame(x = c(0.15, -0.15),
+           y = 0,
+           y2 = c(0.39, 0.31),
+           r = c((0.45+0.24)/2, (0.31+0.24)/2),
+           label = c('Saidova, Abusov 2012\n8464 lexemes', 
+                     'Alekseev, Azaev 2019\n6821 lexemes')) %>% 
+  ggplot(aes(x0 = x, y0 = y, r = r, label = label)) +
+  geom_circle(aes(fill = label), alpha = .2, size = 1, show.legend = FALSE) +
+  geom_text(aes(x=x*1.9, y2), family = "Brill", size = 5)+
+  geom_text(data = values, aes(x = x, y = y, label = label), family = "Brill", size = 6)+
+  coord_fixed()+
+  theme_void()+
+  ylim(-0.4, 0.4) ->
+  venn
+ggsave(filename = "images/03_venn.png", venn, device = "png", width = 6, height = 5)
+```
+
+![](images/03_venn.png)
+
+# Comparing two Botlikh dictionaries: results
+
+```{r}
+botlikh %>% 
+  select(bind_id, reference, lemma) %>% 
+  mutate(lemma = str_remove_all(lemma, "[=/-]")) %>% 
+  na.omit() %>% 
+  pivot_wider(names_from = reference, values_from = lemma) %>% 
+  unnest() %>% 
+  na.omit() %>% 
+  summarise(phonetic_same = sum(`Saidova, Abusov 2012` == `Alekseev 2006`),
+            phonetic_diff = sum(`Saidova, Abusov 2012` != `Alekseev 2006`),
+            phonetic_same_str = sum(str_remove_all(`Saidova, Abusov 2012`, stress) == str_remove_all(`Alekseev 2006`, stress)),
+            phonetic_diff_str = sum(str_remove_all(`Saidova, Abusov 2012`, stress) != str_remove_all(`Alekseev 2006`, stress)),
+            n_stress_same = sum(str_count(`Saidova, Abusov 2012`, stress) == str_count(`Alekseev 2006`, stress)),
+            n_stress_diff = sum(str_count(`Saidova, Abusov 2012`, stress) != str_count(`Alekseev 2006`, stress))) ->
+  results
+```
+
+* There are `r results$phonetic_same` lexemes which look phonetically the same, and `r results$phonetic_diff` are different (`r round(results$phonetic_diff/(results$phonetic_diff+results$phonetic_same)*100)`%)
+* If we remove the stress sign, there are `r results$phonetic_same_str` lexemes which look phonetically the same, and `r results$phonetic_diff_str` are different (`r round(results$phonetic_diff_str/(results$phonetic_same_str+results$phonetic_diff_str)*100)`%)
+* ⇒ `r round(results$phonetic_diff/(results$phonetic_diff+results$phonetic_same)*100) - round(results$phonetic_diff_str/(results$phonetic_same_str+results$phonetic_diff_str)*100)`% of lexemes have different stress pattern?.. \pause Yes, but including `r results$n_stress_diff` (`r round(results$n_stress_diff/(results$n_stress_diff+results$n_stress_same)*100)`%) cases where stress is present in one dictionary and absent in the other. \pause
+
+* What causes the difference between dictionaries?
+    * Stress pattern differences in `r results$phonetic_diff-results$phonetic_diff_str- results$n_stress_diff` lexemes (about `r round((results$phonetic_diff-results$phonetic_diff_str- results$n_stress_diff)/(results$phonetic_same+results$phonetic_diff)*100)`%)
+    * Multiple cases where there is a small difference that could be
+explained either as a typo or in terms phonological variation: *č**u**hí* ‘to run’ [aa] vs. *č**ũ**hí* [sa], *ku**s**u* ‘cherry plum’ [aa] vs. *ku**sː**u* [sa]
+    * Multiple cases where Russian borrowings were adopted differently: *a**w**tobus* ‘bus’ [aa] vs. *a**b**tabus* [sa], *bit**o**n* ‘milk can’ [aa] vs. *bit**u**n* [sa], *a**p**teka* ‘pharmacy’ [aa] vs. *a**b**teka* [sa]
+    * Morphological preferences: *dinija=**w*** 'pious' [aa] vs. *dinija=**b*** [sa]
+
+
+
+# References {.allowframebreaks}

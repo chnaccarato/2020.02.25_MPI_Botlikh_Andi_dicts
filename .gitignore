@@ -18,3 +18,5 @@
 *.synctex.gz
 *.blg
 *.bbl
+data/botlikh.csv
+data/andi_dict.csv
