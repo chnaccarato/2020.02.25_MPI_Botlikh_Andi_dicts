@@ -1,9 +1,9 @@
 ---
-title: "Comparing phonological systems and syllable structure of Botlikh and Zilo Andi: a data--driven analysis"
-author: "G. Moroz"
+title: "Our fucking prezi"
+author: "G. Moroz, Ch. Naccarato, S. Verhees"
 institute: "Linguistic Convergence Laboratory, HSE University, Moscow, Russia"
 date: |
-    | 25 February 2020, MPI-SHH, Jena
+    | 24 March 2020
     | 
     | Presentation is available here: \alert{tinyurl.com/rvpqdaa}
     |
@@ -928,22 +928,7 @@ visualise_simplified %>%
 * Lemmata can contain some affix that will shift all frequencies (e. g. INF, PL or =CL) for some types of phonological units
 * It would be nice to compare the obtained models with the models built on corpora data, when/if it will be available
 
-# Further work
-
-* Now within this project we are adding other Avar-Andic languages (Avar, Godoberi, Karata, Tindi, Chamalal, Bagvalal, Axvax) \pause
-* This approach could be typologically scaled:
-    * it is possible to apply it to 329 dictionary lists from IDS
-    * as a result you will get what is typical and what is rare in languages of the world \pause
-* This approach is not restricted to one type of phonological units:
-    * segments
-    * syllables
-    * sound alternations
-    * phonotactic rules
-    * ... \pause
-* It is possible to apply known NLP technics: 
-    * language attribution (< authorship attribution);
-    * measure distance between languages and phonological units (< vector models from distributional semantics);
-    * model could be extended with Markov Chains (what is probability of the sequence *p-a* in a languages of the world?)
+# Morphological analysis
 
 # References {.allowframebreaks}
 
